@@ -55,3 +55,6 @@ var app = new Vue({
      <tag-list v-for="list in tagList" v-bind:item="list"></tag-list>   
    </ol>
 </div>
+
+
+#####3
