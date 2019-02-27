@@ -4,12 +4,20 @@
     <HelloWorld msg="Welcome to Your Vue.js App"/>
     <DataDisplay v-for="item in tweets"  :item="item" />
   
+
+    <!-- iterate data -->
+
+    <ItemCard v-for="(item, index) in data1" :key="index" :item="item"></Itemcard>
+
+
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
 import DataDisplay from './components/DataDisplay.vue'
+import ItemCard from './components/ItemCard.vue'
+import './assets/css/main.css'
 
 export default {
   name: 'app',
@@ -51,11 +59,45 @@ export default {
     tweet: 'Beauty in the struggle, ugliness in the success.',
     likes: 18,
   }
+],
+data1: [
+
+{
+
+name: 'vue js',
+
+logo: 'http://res.cloudinary.com/johnayeni/image/upload/v1524501994/vue-logo_uoxef2.png',
+
+stack: [ {type:'framework',color:'text-green'},
+ {type:'frontend',color:'text-pink-dark'}, {type:'web',color:'text-red'},{type:'mobile',color:'text-blue'} ]
+
+},
+
+{
+
+name: 'react js',
+
+logo: 'http://res.cloudinary.com/johnayeni/image/upload/v1524501994/react-logo_n8nigl.png',
+
+stack: [ {type:'framework',color:'text-green'}, {type:'frontend',color:'text-pink-dark'},{type:'web',color:'text-red'}, {type:'mobile',color:'text-blue'}]
+
+},
+{
+
+name: 'flutter',
+
+logo: 'http://res.cloudinary.com/johnayeni/image/upload/v1524501991/flutter-logo_co1o4s.png',
+
+stack: [ {type:'framework',color:'text-green'},{type:'hybrid',color:'text-black'},  {type:'mobile',color:'text-blue'}]
+
+},
+
 ]
       }
     },
+   
   components: {
-    HelloWorld,DataDisplay
+    HelloWorld,DataDisplay,ItemCard
   }
 }
 </script>
